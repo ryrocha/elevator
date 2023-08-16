@@ -1,0 +1,2 @@
+add_executable(test_elevator test_elevator.cpp)
+target_link_libraries(test_elevator PRIVATE elevator_controller Catch2::Catch2WithMain)

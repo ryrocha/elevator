@@ -1,0 +1,5 @@
+add_library(elevator_controller elevator_controller.cpp)
+target_include_directories(elevator_controller PUBLIC ${PROJECT_SOURCE_DIR}/include)
+
+add_executable(run_elevator run_elevator.cpp)
+target_link_libraries(run_elevator elevator_controller cxxopts)
