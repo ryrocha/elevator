@@ -6,7 +6,12 @@ using namespace std;
 
 RESULT ElevatorController::add_floors(vector<int>& floors, double floor_time) {
     int num_floors = 0;
-    vector<int> floors_visited = {floors.front()};
+    vector<int> floors_visited;
+
+    if (! floors.empty()) {
+        floors_visited.push_back(floors[0]);
+    };
+
     for (int i {1}; i < floors.size(); ++i) {
         int last_floor = floors[i-1];
         int next_floor = floors[i];

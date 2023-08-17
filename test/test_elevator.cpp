@@ -37,3 +37,11 @@ TEST_CASE("First floor only", "[first_only]") {
     REQUIRE(result.travel_time == 0);
     REQUIRE(result.floors_visited == floors);
 };
+
+TEST_CASE("No floors given", "[no_floors]") {
+    std::vector<int> floors = {};
+    ElevatorController controller;
+    RESULT result = controller.add_floors(floors);
+    REQUIRE(result.travel_time == 0);
+    REQUIRE(result.floors_visited == floors);
+};
