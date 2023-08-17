@@ -11,5 +11,6 @@ COPY . /elevator
 
 WORKDIR /elevator/build
 
-RUN cmake -DBUILD_TESTING=ON ..
+ARG tests=ON
+RUN cmake -DBUILD_TESTING=$tests ..
 RUN cmake --build .
