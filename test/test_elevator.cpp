@@ -11,6 +11,15 @@ TEST_CASE("Normal elevator operations", "[nominal]") {
     REQUIRE(result.floors_visited == floors);
 };
 
+TEST_CASE("Repeated consecutive floors given", "[repeated]") {
+    std::vector<int> floors = {12, 12, 2, 9, 9, 9, 1, 32, 32};
+    ElevatorController controller;
+    RESULT result = controller.add_floors(floors);
+    REQUIRE(result.travel_time == 560);
+    std::vector<int> floors_visited = {12, 2, 9, 1, 32};
+    REQUIRE(result.floors_visited == floors_visited);
+};
+
 TEST_CASE("Modified floor travel time", "[floor_time]") {
     std::vector<int> floors = {12, 2, 9, 1, 32};
     double floor_time = 8.6;
