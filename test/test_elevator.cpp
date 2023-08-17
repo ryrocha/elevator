@@ -45,3 +45,11 @@ TEST_CASE("No floors given", "[no_floors]") {
     REQUIRE(result.travel_time == 0);
     REQUIRE(result.floors_visited == floors);
 };
+
+TEST_CASE("Temporary failing test", "[temp]") {
+    std::vector<int> floors = {1, 2, 3};
+    ElevatorController controller;
+    RESULT result = controller.add_floors(floors);
+    REQUIRE(result.travel_time == 6);
+    REQUIRE(result.floors_visited == floors);
+};
