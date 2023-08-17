@@ -5,7 +5,7 @@
 
 int main(int argc, char** argv) {
     cxxopts::Options options("run_elevator",
-        "Runs the elevator over given a list of floors.");
+        "Runs the elevator over a given list of floors.");
 
     options.positional_help("[optional args]").show_positional_help();
 
