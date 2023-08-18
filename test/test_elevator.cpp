@@ -18,6 +18,15 @@ TEST_CASE("Repeated consecutive floors given", "[repeated]") {
     REQUIRE(result.travel_time == 560);
     std::vector<int> floors_visited = {12, 2, 9, 1, 32};
     REQUIRE(result.floors_visited == floors_visited);
+
+};
+
+TEST_CASE("Temporary passing unit test", "[temp]") {
+    std::vector<int> floors = {1, 2, 3, 4, 3, 2, 1};
+    ElevatorController controller;
+    RESULT result = controller.add_floors(floors);
+    REQUIRE(result.travel_time == 60);
+    REQUIRE(result.floors_visited == floors);
 };
 
 TEST_CASE("Modified floor travel time", "[floor_time]") {
